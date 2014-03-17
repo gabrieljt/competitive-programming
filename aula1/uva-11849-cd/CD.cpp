@@ -1,7 +1,7 @@
 // Gabriel Trabasso - 298573
 // CD Problem - UVA - 11849
 
-#include <stdio.h>
+#include <cstdio>
 #include <vector>
 #include <algorithm>
 

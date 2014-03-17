@@ -1,7 +1,7 @@
 // Gabriel Trabasso - 298573
 // 3n + 1 problem - UVA - 100
 
-#include <stdio.h>
+#include <cstdio>
 #include <vector>
 #include <algorithm>
 
