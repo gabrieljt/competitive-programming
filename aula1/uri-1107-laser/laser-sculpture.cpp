@@ -5,34 +5,35 @@
 
 int main()
 {
-    auto height = 0u;
-    auto length = 0u;
-    unsigned int currentH, previousH;
+    unsigned int height, length, times, newH, currentH, previousH;
 
     while (scanf("%u %u", &height, &length) > 0 && (height || length))
     {
-        auto times = 0u;
-        bool up = false;
-        previousH = height;
-        for (auto i = 0u; i < length; ++i)
+        times = 0;
+        bool rising = false;
+        previousH = newH = height;
+        for (unsigned int i = 0; i < length; ++i)
         {
             scanf("%u", &currentH);
-
             if (currentH <= previousH)
             {
-                up = false;
+                rising = false;
             }
             else
             {
-                if (!up)
-                    times += height - previousH;
-                height = currentH;
-                up = true;
+                // When rising, count times for the previous height
+                if (!rising) 
+                    times += newH - previousH;
+                // Updates the problem height
+                newH = currentH;
+                rising = true;
             }
             previousH = currentH;
         }
-        if (!up)
-            times += height - previousH;
+        if (!rising)
+        {
+            times += newH - previousH;
+        }
         printf("%u\n", times);
     }
 
