@@ -12,7 +12,8 @@ int main()
     std::vector<unsigned int> cycles;
 
     while (scanf("%u %u", &i, &j) > 0)
-    {   
+    {
+        // Keeps i smaller than j (for loop)
         auto swapped = false;
         if (i > j)
         {
@@ -37,6 +38,7 @@ int main()
             cycles.push_back(cycle);
         }       
         auto maxCycle = std::max_element(cycles.begin(), cycles.end()); // Returns Iterator
+        // Must print the output in the original order
         swapped ? printf("%u %u %u\n", j, i, *maxCycle) : printf("%u %u %u\n", i, j, *maxCycle);
         cycles.clear();
     }
