@@ -53,7 +53,7 @@ int main()
                 // a '.'
                 else if (foundCheckpoint)
                 {
-                        ++currentDistance;
+                    ++currentDistance;
                 }        
             }
             std::cout << minimumDistance << std::endl;
