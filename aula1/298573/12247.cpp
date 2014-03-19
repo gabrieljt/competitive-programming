@@ -1,5 +1,7 @@
 // Gabriel Trabasso - 298573
-// Jollo problem - UVA - 12247
+// Jollo problem - UVa - 12247
+// Solution #13354138 - 2014-03-19 21:13:01
+// C++11 - compile with -std=c++11 flag
 
 #include <cstdio>
 #include <vector>
@@ -25,7 +27,6 @@ int main()
     {
         std::sort(herCards, herCards + 3);
         std::sort(hisCards, hisCards + 2);
-        
 
         // Prince already won all the possible games no matter what, deal the lowest possible card
         if (hisCards[0] > herCards[2])

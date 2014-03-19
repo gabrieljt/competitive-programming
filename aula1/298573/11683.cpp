@@ -1,5 +1,8 @@
 // Gabriel Trabasso - 298573
 // Laser Sculpture problem - URI - 1107
+// Solution #558712 - 2014-03-17 14:20:26 
+// Laser Sculpture problem - UVa - 12247
+// Solution #13354351 - 2014-03-19 21:41:15
 
 #include <cstdio>
 

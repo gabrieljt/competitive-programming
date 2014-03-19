@@ -1,3 +1,8 @@
+// Gabriel Trabasso - 298573
+// Burger Time? problem - UVa - 11661
+// Solution #13344103 - 2014-03-18 05:17:45
+// C++11 - compile with -std=c++11 flag
+
 #include <iostream>
 #include <string>
 

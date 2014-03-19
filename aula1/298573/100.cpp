@@ -1,5 +1,7 @@
 // Gabriel Trabasso - 298573
-// 3n + 1 problem - UVA - 100
+// 3n + 1 problem - UVa - 100 
+// Solution #13337114 - 2014-03-17 02:20:30
+// C++11 - compile with -std=c++11 flag
 
 #include <cstdio>
 #include <vector>

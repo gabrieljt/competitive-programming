@@ -1,5 +1,7 @@
 // Gabriel Trabasso - 298573
-// CD Problem - UVA - 11849
+// CD Problem - UVa - 11849
+// Solution #13336745 - 2014-03-16 23:48:54
+// C++11 - compile with -std=c++11 flag
 
 #include <cstdio>
 #include <vector>
