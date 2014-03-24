@@ -24,7 +24,6 @@ int main()
             }
             else
             {
-                // When rising, count times for the previous height
                 if (!rising) 
                     times += newH - previousH;
                 // Updates the problem height
