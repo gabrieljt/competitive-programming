@@ -58,7 +58,7 @@ int main()
             else if (command == "DEQUEUE")
             {                
                 auto itr = teamQueue.begin();
-	        	printf("%u\n", itr->first);
+                printf("%u\n", itr->first);
                 teamQueue.pop_front();
             }
         } 
