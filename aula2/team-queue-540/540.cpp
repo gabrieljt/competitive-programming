@@ -1,31 +1,15 @@
+// Gabriel Trabasso - 298573
+// Team Queue problem - UVa - 540
+// Solution #13384798 - 2014-03-25 04:48:25
+// C++11 - compile with -std=c++11 flag
+
+#include <cstdio>
 #include <iostream>
-#include <vector>
-#include <list>
 #include <string>
-#include <algorithm>
+#include <map>
+#include <deque>
 
-struct TeamMember
-{
-    TeamMember(unsigned int id)
-    : team()
-    , id(id)
-    {
-    }
-
-    TeamMember(unsigned int team, unsigned int id)
-    : team(team)
-    , id(id)
-    {
-    }
-
-    bool operator()(const TeamMember& tm) const
-    {
-        return tm.id == id;
-    }
-
-    unsigned int team;
-    unsigned int id;
-};
+typedef std::pair<unsigned int, unsigned int> TeamMember;
 
 int main()
 {
@@ -33,20 +17,19 @@ int main()
     auto scenarioNumber = 1u;
     while(scanf("%u", &numberOfTeams) && numberOfTeams)
     {
-        std::vector<TeamMember> teams;
+        std::map<unsigned int, unsigned int> teams;
         for (auto team = 0u; team < numberOfTeams; ++team)
         {
             scanf("%u", &numberOfMembers);
             for (auto member = 0u; member < numberOfMembers; ++member)
             {   
                 scanf("%u", &memberId);
-
-                TeamMember teamMember(team, memberId);
-                teams.push_back(teamMember);
+                teams[memberId] = team;
             }
         }
+        
         std::string command;
-        std::list<TeamMember> teamQueue;
+        std::deque<TeamMember> teamQueue;
         printf("Scenario #%u\n", scenarioNumber);
         // Process Commands
         do 
@@ -54,16 +37,16 @@ int main()
             std::cin >> command;
             if (command == "ENQUEUE")
             {
-                std::cin >> memberId;
-                auto memberItr = std::find_if(teams.begin(), teams.end(), TeamMember(memberId));               
-                TeamMember teamMember(memberItr->team, memberItr->id);
-                bool foundTeam = false;
+                scanf("%u", &memberId);
+                auto team = teams[memberId];
+                auto teamMember = std::make_pair(memberId, team);
+                auto foundTeam = false;
                 for (auto itr = teamQueue.begin(); itr != teamQueue.end(); ++itr)
                 {
-                    if (itr->team == teamMember.team)
+                    if (itr->second == teamMember.second)
                     {
                         foundTeam = true;
-                        while (itr->team == teamMember.team)
+                        while (itr->second == teamMember.second && itr != teamQueue.end())
                             ++itr;
                         teamQueue.insert(itr, teamMember);
                         break;
@@ -75,8 +58,7 @@ int main()
             else if (command == "DEQUEUE")
             {                
                 auto itr = teamQueue.begin();
-                TeamMember teamMember(itr->team, itr->id);
-                std::cout << teamMember.id << std::endl;
+	        	printf("%u\n", itr->first);
                 teamQueue.pop_front();
             }
         } 
