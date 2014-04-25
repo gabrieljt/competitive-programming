@@ -1,6 +1,6 @@
 // Gabriel Trabasso - 298573
 // Coin Collector - UVa - 11264
-// # - 
+// #13546020 - 2014-04-25 06:55:20
 
 #include <cstdio>
 #include <array>
