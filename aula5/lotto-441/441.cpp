@@ -15,7 +15,7 @@ void backtrack(int current, int index)
 {
     if (current == 6)
     {
-        printf("%u %u %u %u %u %u\n"
+        printf("%d %d %d %d %d %d\n"
             , game[0], game[1], game[2]
             , game[3], game[4], game[5]);
         return;
@@ -36,7 +36,7 @@ void backtrack(int current, int index)
 int main()
 {
     int count = 0;
-    while (scanf("%u", &k) && k)
+    while (scanf("%d", &k) && k)
     {
         if (count > 0)
             printf("\n");
@@ -44,11 +44,10 @@ int main()
         game.fill(0);
         used.fill(0);
         for (int i = 0; i < k; ++i)
-            scanf("%u", &numbers[i]);
+            scanf("%d", &numbers[i]);
         backtrack(0, 0);
         ++count;
     }
 
     return 0;
 }
-
